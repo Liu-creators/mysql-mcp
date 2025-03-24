@@ -465,6 +465,8 @@ async def use_database(database_name: str, db_config: Optional[Dict[str, Any]] =
     Returns:
         包含切换结果的字典
     """
+    global GLOBAL_DB_CONFIG
+    
     if not database_name:
         return {"error": "数据库名称不能为空"}
     
@@ -490,7 +492,6 @@ async def use_database(database_name: str, db_config: Optional[Dict[str, Any]] =
         conn.close()
         
         # 更新全局配置
-        global GLOBAL_DB_CONFIG
         if GLOBAL_DB_CONFIG is not None:
             GLOBAL_DB_CONFIG["database"] = database_name
         
