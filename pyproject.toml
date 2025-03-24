@@ -1,0 +1,10 @@
+[project]
+name = "mysql-mcp"
+version = "0.1.0"
+description = "Add your description here"
+readme = "README.md"
+requires-python = ">=3.12"
+dependencies = [
+    "mcp[cli]>=1.5.0",
+    "mysql-connector-python>=9.2.0",
+]
